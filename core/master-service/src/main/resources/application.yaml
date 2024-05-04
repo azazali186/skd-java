@@ -1,0 +1,86 @@
+server:
+  port: 6502
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: master-gateway
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/skd_master_service?serverTimezone=GMT%2B7&allowMultiQueries=true
+    hikari:
+      username: dev
+      password: Aj189628@
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  data:
+    redis:
+      database: 1
+      host: 127.0.0.1
+      port: 6379
+      password: Aj189628@
+
+logging:
+  level:
+    org:
+      springframework.web: debug
+      hibernate:
+#        SQL: DEBUG
+        type: TRACE
+  file:
+    name: logs/skd-master-service.log
+  logback:
+    rolling policy:
+      file-name-pattern: logs/%d{yyyy-MM, aux}/app.%d{yyyy-MM-dd}.%i.log
+      max-file-size: 100MB
+      total-size-cap: 10GB
+      max-history: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Expose all actuator endpoints, be cautious with this in production
+  tracing:
+    sampling:
+      probability: 1.0
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /swagger-ui
+  swagger-ui:
+    enabled: true
+    path: /swagger-doc
+    tryItOutEnabled: true
+    persistAuthorization: true
+    operationsSorter: method
+    tagsSorter: alpha
+    filter: true
+
+my-config:
+  openapi:
+    local-url: http://127.0.0.1:6851
+    dev-url: http://192.168.30.28:6851
+    prod-url: http://192.168.30.28:6851
+  bot-username: CryptoPayGateBot
+  bot-token: 7097688763:AAHPI20vp003GucXG_lE2ol7WfLp_gP-YI0
+  telegram-channel-id: -4111658873
+  aws:
+    prefix: https://crypto-payment-gateway.s3.ap-east-1.amazonaws.com
+    bucketName: crypto-payment-gateway
+  # blockchain:
+  #   eth:
+  #     is-testnet: "true"
+  #     testnet: "https://sepolia.infura.io/v3/28d5441c7acc44f3b440a770184af0d2"
+  #     sepolia: "https://rpc.sepolia.org"
+  #     mainnet: "https://mainnet.infura.io/v3/28d5441c7acc44f3b440a770184af0d2"
+  #   bsc:
+  #     is-testnet: "true"
+  #     testnet: "https://sepolia.infura.io/v3/28d5441c7acc44f3b440a770184af0d2"
+  #     mainnet: "https://mainnet.infura.io/v3/28d5441c7acc44f3b440a770184af0d2"
