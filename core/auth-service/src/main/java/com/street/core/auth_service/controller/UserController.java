@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.street.core.auth_service.request.UserRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import com.street.core.auth_service.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;

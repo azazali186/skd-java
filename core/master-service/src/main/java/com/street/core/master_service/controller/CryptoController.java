@@ -1,6 +1,6 @@
 package com.street.core.master_service.controller;
 import com.street.core.master_service.request.CryptoRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import com.street.core.master_service.service.CryptoService;
 
 import io.swagger.v3.oas.annotations.Operation;

@@ -13,7 +13,7 @@ import com.street.core.master_service.repository.CurrencyRepo;
 import com.street.core.master_service.repository.UserRepo;
 import com.street.core.master_service.request.AcceptedCurrenciesRequest;
 import com.street.core.master_service.response.AcceptedCurrenciesResponse;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

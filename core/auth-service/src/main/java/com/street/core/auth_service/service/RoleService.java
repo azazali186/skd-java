@@ -39,7 +39,7 @@ import com.street.core.auth_service.repository.UserRepo;
 import com.street.core.auth_service.request.ChildrenPermissionRequest;
 import com.street.core.auth_service.request.PermissionRequest;
 import com.street.core.auth_service.request.RoleRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

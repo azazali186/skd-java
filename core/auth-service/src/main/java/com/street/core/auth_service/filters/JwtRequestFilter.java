@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 import com.street.core.auth_service.entity.UserEntity;
 import com.street.core.auth_service.enums.JwtTokenUser;
 import com.street.core.auth_service.enums.LoginUserUtils;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import com.street.core.auth_service.service.AuthService;
 import com.street.core.auth_service.utils.JwtUtil;
 

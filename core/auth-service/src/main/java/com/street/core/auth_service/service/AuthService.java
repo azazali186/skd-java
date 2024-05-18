@@ -35,7 +35,7 @@ import com.street.core.auth_service.repository.SessionRepo;
 import com.street.core.auth_service.repository.UserRepo;
 import com.street.core.auth_service.request.LoginRequest;
 import com.street.core.auth_service.request.RegisterRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import com.street.core.auth_service.response.UserWithToken;
 import com.street.core.auth_service.utils.JwtUtil;
 

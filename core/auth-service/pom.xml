@@ -123,6 +123,13 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.street</groupId>
+			<artifactId>common-utils-service</artifactId>
+			<version>${skd.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>${swagger.version}</version>

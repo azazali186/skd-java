@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.street.core.auth_service.request.LoginRequest;
 import com.street.core.auth_service.request.RegisterRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import com.street.core.auth_service.service.AuthService;
 
 import io.swagger.v3.oas.annotations.Operation;

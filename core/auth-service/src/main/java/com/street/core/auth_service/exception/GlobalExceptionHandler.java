@@ -8,7 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 
 import io.jsonwebtoken.ExpiredJwtException;
 

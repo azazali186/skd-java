@@ -2,7 +2,7 @@ package com.street.core.master_service.service;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.*;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 
 import lombok.extern.slf4j.Slf4j;
 

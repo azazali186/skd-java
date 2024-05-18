@@ -23,7 +23,7 @@ import com.street.core.auth_service.repository.AuthRepo;
 import com.street.core.auth_service.repository.RoleRepo;
 import com.street.core.auth_service.repository.UserRepo;
 import com.street.core.auth_service.request.UserRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;

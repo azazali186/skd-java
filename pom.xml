@@ -157,7 +157,7 @@
 			
 			<dependency>
                 <groupId>com.street</groupId>
-                <artifactId>common-nats-service</artifactId>
+                <artifactId>common-utils-service</artifactId>
                 <version>${skd.version}</version>
             </dependency>
 		</dependencies>

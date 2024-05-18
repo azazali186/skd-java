@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.street.core.auth_service.request.RoleRequest;
-import com.street.core.auth_service.response.ApiResponse;
+import com.street.common.utils.ApiResponse;
 import com.street.core.auth_service.service.RoleService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;

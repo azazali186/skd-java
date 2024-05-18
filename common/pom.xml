@@ -18,6 +18,7 @@
 		<module>common-redis-service</module>
 		<module>common-rabbit-mq-service</module>
 		<module>common-nats-service</module>
+		<module>common-utils-service</module>
 	</modules>
 
 </project>
