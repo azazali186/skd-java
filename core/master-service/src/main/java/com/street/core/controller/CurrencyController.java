@@ -12,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Tag(name = "Currency Management", description = "Currency Management APIs")
@@ -40,7 +38,7 @@ public class CurrencyController {
     @Operation(summary = "Admin Get By id Currency", description = "Admin Get By id Currency")
     @SuppressWarnings({ "rawtypes" })
     @GetMapping(value = "/{id}", name = "ADMIN GET BY ID CURRENCY", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> getById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse> getById(@PathVariable("id") Long id) {
         ApiResponse response = currencyService.getById(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -60,7 +58,7 @@ public class CurrencyController {
     @Operation(summary = "Admin Update By id Currency", description = "Admin Update By id Currency")
     @SuppressWarnings({ "rawtypes" })
     @PatchMapping(value = "/{id}", name = "ADMIN UPDATE BY ID CURRENCY", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody CurrencyRequest req) {
+    public ResponseEntity<ApiResponse> update(@PathVariable("id") Long id, @RequestBody CurrencyRequest req) {
         ApiResponse response = currencyService.update(id, req);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)

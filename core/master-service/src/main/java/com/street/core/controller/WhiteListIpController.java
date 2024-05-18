@@ -38,7 +38,7 @@ public class WhiteListIpController {
     @Operation(summary = "Admin Get Ip White List Configuration Data By Id", description = "Admin Get Ip White List Configuration Data By Id")
     @SuppressWarnings({ "rawtypes" })
     @GetMapping(value = "/{id}", name = "ADMIN GET IP WHITE LIST CONFIGURATION DATA BY ID", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> getById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse> getById(@PathVariable("id") Long id) {
         ApiResponse response = whiteListService.getById(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -58,7 +58,7 @@ public class WhiteListIpController {
     @Operation(summary = "Admin Ip White List Configuration Data By Id", description = "Admin Ip White List Configuration Data By Id")
     @SuppressWarnings({ "rawtypes" })
     @PatchMapping(value = "/{id}", name = "ADMIN IP WHITE LIST CONFIGURATION DATA BY ID", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody WhiteListIpRequest req) {
+    public ResponseEntity<ApiResponse> update(@PathVariable("id") Long id, @RequestBody WhiteListIpRequest req) {
         ApiResponse response = whiteListService.update(id, req);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)

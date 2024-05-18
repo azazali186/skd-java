@@ -65,9 +65,9 @@ springdoc:
 
 my-config:
   openapi:
-    local-url: http://127.0.0.1:6851
-    dev-url: http://192.168.30.28:6851
-    prod-url: http://192.168.30.28:6851
+    local-url: http://127.0.0.1:6502
+    dev-url: http://192.168.30.28:6502
+    prod-url: http://192.168.30.28:6502
   bot-username: CryptoPayGateBot
   bot-token: 7097688763:AAHPI20vp003GucXG_lE2ol7WfLp_gP-YI0
   telegram-channel-id: -4111658873

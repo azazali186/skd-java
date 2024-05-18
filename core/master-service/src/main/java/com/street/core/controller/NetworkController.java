@@ -12,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Tag(name = "Network Management", description = "Network Management APIs")
@@ -40,7 +38,7 @@ public class NetworkController {
     @Operation(summary = "Admin Get By id Network Configuration", description = "Admin Get By id Network Configuration")
     @SuppressWarnings({ "rawtypes" })
     @GetMapping(value = "/{id}", name = "ADMIN GET BY ID NETWORK CONFIGURATION", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> getById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse> getById(@PathVariable("id") Long id) {
         ApiResponse response = networkService.getById(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -60,7 +58,7 @@ public class NetworkController {
     @Operation(summary = "Admin Update Network Configuration by Id", description = "Admin Update Network Configuration by Id")
     @SuppressWarnings({ "rawtypes" })
     @PatchMapping(value = "/{id}", name = "ADMIN UPDATE NETWORK CONFIGURATION BY ID", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody NetworkRequest req) {
+    public ResponseEntity<ApiResponse> update(@PathVariable("id") Long id, @RequestBody NetworkRequest req) {
         ApiResponse response = networkService.update(id, req);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)

@@ -2,8 +2,6 @@ package com.street.core.listner;
 
 import com.street.common.utils.RabbitMqConnection;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component

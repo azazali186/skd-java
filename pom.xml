@@ -154,6 +154,12 @@
                 <artifactId>common-nats-service</artifactId>
                 <version>${skd.version}</version>
             </dependency>
+			
+			<dependency>
+                <groupId>com.street</groupId>
+                <artifactId>common-nats-service</artifactId>
+                <version>${skd.version}</version>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 

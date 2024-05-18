@@ -12,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Tag(name = "Wallet Management", description = "Wallet Management APIs")
@@ -40,7 +38,7 @@ public class WalletController {
     @Operation(summary = "Admin Get Wallet By Id", description = "Admin Get Wallet By Id")
     @SuppressWarnings({ "rawtypes" })
     @GetMapping(value = "/{id}", name = "ADMIN GET WALLET BY ID", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> getById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse> getById(@PathVariable("id") Long id) {
         ApiResponse response = walletService.getById(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -60,7 +58,7 @@ public class WalletController {
     @Operation(summary = "Admin Update Wallet By Id", description = "Admin Update Wallet By Id")
     @SuppressWarnings({ "rawtypes" })
     @PatchMapping(value = "/{id}", name = "ADMIN UPDATE WALLET BY ID", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody WalletRequest req) {
+    public ResponseEntity<ApiResponse> update(@PathVariable("id") Long id, @RequestBody WalletRequest req) {
         ApiResponse response = walletService.update(id, req);
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)

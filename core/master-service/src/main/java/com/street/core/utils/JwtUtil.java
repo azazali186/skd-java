@@ -4,7 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.io.Decoders;
 
@@ -64,15 +63,15 @@ public class JwtUtil {
         }
     }
 
-    public Boolean validateToken(String token, UserDetails userDetails) throws ExpiredJwtException {
-        try {
-            final String username = extractUsername(token);
-            return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
-        } catch (ExpiredJwtException ex) {
-            // Handle the expired token exception or rethrow it if necessary
-            throw ex;
-        }
-    }
+    // public Boolean validateToken(String token, UserDetails userDetails) throws ExpiredJwtException {
+    //     try {
+    //         final String username = extractUsername(token);
+    //         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    //     } catch (ExpiredJwtException ex) {
+    //         // Handle the expired token exception or rethrow it if necessary
+    //         throw ex;
+    //     }
+    // }
 
     public Boolean validateToken(String token, String userName) throws ExpiredJwtException {
         try {

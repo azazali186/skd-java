@@ -1,29 +1,29 @@
-package com.street.core.filters;
+// package com.street.core.filters;
 
-import java.util.Collection;
+// import java.util.Collection;
 
-import org.springframework.security.authentication.AbstractAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.Transient;
+// import org.springframework.security.authentication.AbstractAuthenticationToken;
+// import org.springframework.security.core.GrantedAuthority;
+// import org.springframework.security.core.Transient;
 
-@Transient
-public class ApiSecretKeyAuthenticationToken extends AbstractAuthenticationToken {
+// @Transient
+// public class ApiSecretKeyAuthenticationToken extends AbstractAuthenticationToken {
 
-    private String apiKey;
+//     private String apiKey;
     
-    public ApiSecretKeyAuthenticationToken(String apiKey, Collection<? extends GrantedAuthority> authorities) {
-        super(authorities);
-        this.apiKey = apiKey;
-        setAuthenticated(true);
-    }
+//     public ApiSecretKeyAuthenticationToken(String apiKey, Collection<? extends GrantedAuthority> authorities) {
+//         super(authorities);
+//         this.apiKey = apiKey;
+//         setAuthenticated(true);
+//     }
 
-    @Override
-    public Object getCredentials() {
-        return null;
-    }
+//     @Override
+//     public Object getCredentials() {
+//         return null;
+//     }
 
-    @Override
-    public Object getPrincipal() {
-        return apiKey;
-    }
-}
+//     @Override
+//     public Object getPrincipal() {
+//         return apiKey;
+//     }
+// }

@@ -10,12 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+// import org.springframework.security.core.GrantedAuthority;
+// import org.springframework.security.core.authority.SimpleGrantedAuthority;
+// import org.springframework.security.core.userdetails.UserDetails;
+// import org.springframework.security.core.userdetails.UserDetailsService;
+// import org.springframework.security.core.userdetails.UsernameNotFoundException;
+// import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.street.core.entity.PermissionEntity;
@@ -36,11 +36,12 @@ import com.street.core.repository.UserRepo;
 import com.street.core.request.LoginRequest;
 import com.street.core.request.RegisterRequest;
 import com.street.core.response.ApiResponse;
+import com.street.core.response.AuthResponse;
 import com.street.core.response.UserWithToken;
 import com.street.core.utils.JwtUtil;
 
 @Service
-public class AuthService implements UserDetailsService {
+public class AuthService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);
 
@@ -62,32 +63,31 @@ public class AuthService implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity appUser = authRepo.findById(Long.valueOf(username))
-                .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
-
-        appUser.getRole().getPermissions().size(); // Ensure permissions are loaded
+    // // @Override
+    public AuthResponse loadUserByUserId(Long userId) throws UserNotFoundException {
+        UserEntity appUser = authRepo.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User Not Found with id: " + userId));
+        appUser.getRole().getPermissions().size();
         List<PermissionEntity> permissions = appUser.getRole().getPermissions();
 
-        List<GrantedAuthority> authorities = permissions.stream()
-                .map(permission -> new SimpleGrantedAuthority(permission.getName()))
+        List<String> authorities = permissions.stream()
+                .map(permission -> (permission.getName()))
                 .collect(Collectors.toList());
 
-        return new org.springframework.security.core.userdetails.User(appUser.getId().toString(), appUser.getId().toString(),
-                authorities);
+        return AuthResponse.builder().user(appUser).permissions(authorities).build();
     }
 
-    public List<GrantedAuthority> getAuthorities() {
+    // public List<GrantedAuthority> getAuthorities() {
 
-        List<PermissionEntity> permissions = StreamSupport.stream(permRepo.findAll().spliterator(), false)
-                .collect(Collectors.toList());
-        List<GrantedAuthority> authorities = permissions.stream()
-                .map(permission -> new SimpleGrantedAuthority(permission.getName()))
-                .collect(Collectors.toList());
+    // List<PermissionEntity> permissions =
+    // StreamSupport.stream(permRepo.findAll().spliterator(), false)
+    // .collect(Collectors.toList());
+    // List<GrantedAuthority> authorities = permissions.stream()
+    // .map(permission -> new SimpleGrantedAuthority(permission.getName()))
+    // .collect(Collectors.toList());
 
-        return authorities;
-    }
+    // return authorities;
+    // }
     public UserEntity findById(Long id) throws UserNotFoundException {
         Optional<UserEntity> optionalUserEntity = authRepo.findById(id);
         if (!optionalUserEntity.isPresent()) {
