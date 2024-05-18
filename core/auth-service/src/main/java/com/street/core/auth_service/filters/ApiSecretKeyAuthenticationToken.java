@@ -3,8 +3,8 @@ package com.street.core.auth_service.filters;
 import java.util.Collection;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
-import org.springframework.security.core.auth_service.GrantedAuthority;
-import org.springframework.security.core.auth_service.Transient;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.Transient;
 
 @Transient
 public class ApiSecretKeyAuthenticationToken extends AbstractAuthenticationToken {

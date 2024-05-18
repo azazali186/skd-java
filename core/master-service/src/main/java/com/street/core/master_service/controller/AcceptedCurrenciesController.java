@@ -2,7 +2,7 @@ package com.street.core.master_service.controller;
 
 import com.street.core.master_service.request.AcceptedCurrenciesRequest;
 import com.street.core.master_service.service.AcceptedCurrenciesService;
-import com.street.core.auth_service.response.ApiResponse;.ApiResponse;
+import com.street.core.auth_service.response.ApiResponse;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
