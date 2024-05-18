@@ -118,6 +118,8 @@
 		<dependency>
 			<groupId>com.street</groupId>
 			<artifactId>common-rabbit-mq-service</artifactId>
+			<version>${skd.version}</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>

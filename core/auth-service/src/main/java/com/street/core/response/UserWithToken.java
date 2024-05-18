@@ -2,7 +2,6 @@ package com.street.core.response;
 
 import java.util.List;
 
-import com.street.core.entity.PermissionEntity;
 import com.street.core.entity.response.AdminPageResponse;
 import com.street.core.entity.response.UserEntityResponse;
 
