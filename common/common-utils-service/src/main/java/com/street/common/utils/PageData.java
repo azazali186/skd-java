@@ -1,4 +1,4 @@
-package com.street.core.auth_service.response;
+package com.street.common.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
