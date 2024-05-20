@@ -135,7 +135,7 @@
 
 		<dependency>
 			<groupId>com.street</groupId>
-			<artifactId>auth-service</artifactId>
+			<artifactId>common-utils-service</artifactId>
 			<version>${skd.version}</version>
 			<scope>compile</scope>
 		</dependency>
