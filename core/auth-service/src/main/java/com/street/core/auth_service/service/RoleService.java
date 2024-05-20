@@ -14,7 +14,6 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import com.street.core.auth_service.exception.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +38,7 @@ import com.street.core.auth_service.repository.UserRepo;
 import com.street.core.auth_service.request.ChildrenPermissionRequest;
 import com.street.core.auth_service.request.PermissionRequest;
 import com.street.core.auth_service.request.RoleRequest;
+import com.street.common.exception.NotFoundException;
 import com.street.common.utils.ApiResponse;
 
 import jakarta.persistence.EntityManager;

@@ -1,4 +1,4 @@
-package com.street.core.master_service.exception;
+package com.street.common.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.street.common.utils.ApiResponse;
-
-import io.jsonwebtoken.ExpiredJwtException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -63,14 +61,6 @@ public class GlobalExceptionHandler {
         ApiResponse<Void> errorResponse = new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), errorMessage);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).contentType(MediaType.APPLICATION_JSON)
         .body(errorResponse);
-    }
-
-    @ExceptionHandler(ExpiredJwtException.class)
-    public ResponseEntity<ApiResponse<Void>> handle(ExpiredJwtException ex) {
-        ApiResponse<Void> errorResponse = new ApiResponse<>(HttpStatus.UNAUTHORIZED.value(), ex.getMessage());
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(errorResponse);
     }
 
 }

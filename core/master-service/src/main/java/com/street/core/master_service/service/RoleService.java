@@ -21,7 +21,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
-import com.street.core.master_service.exception.NotFoundException;
+import com.street.common.exception.NotFoundException;
 import com.street.core.master_service.entity.AdminPageEntity;
 import com.street.core.master_service.entity.PermissionEntity;
 import com.street.core.master_service.entity.RoleEntity;

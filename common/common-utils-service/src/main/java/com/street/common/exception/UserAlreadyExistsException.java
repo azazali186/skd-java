@@ -1,4 +1,4 @@
-package com.street.core.auth_service.exception;
+package com.street.common.exception;
 
 public class UserAlreadyExistsException extends RuntimeException {
     public UserAlreadyExistsException(String message) {

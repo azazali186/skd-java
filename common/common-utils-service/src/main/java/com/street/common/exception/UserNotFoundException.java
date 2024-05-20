@@ -1,4 +1,4 @@
-package com.street.core.master_service.exception;
+package com.street.common.exception;
 
 public class UserNotFoundException  extends RuntimeException {
     public UserNotFoundException(String message) {

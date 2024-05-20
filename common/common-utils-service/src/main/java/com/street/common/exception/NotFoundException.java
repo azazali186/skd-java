@@ -1,4 +1,4 @@
-package com.street.core.auth_service.exception;
+package com.street.common.exception;
 
 public class NotFoundException  extends RuntimeException {
     public NotFoundException(String message) {
